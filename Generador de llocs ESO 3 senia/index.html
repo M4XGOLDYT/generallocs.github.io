@@ -4,9 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejecutar Script Python</title>
+    <script>
+        async function ejecutarScript() {
+            const response = await fetch('https://tu-api-flask.herokuapp.com/ejecutar');
+            const result = await response.text();
+            document.getElementById('resultado').innerText = result;
+        }
+    </script>
 </head>
 <body>
     <h1>Ejecutar Script Python</h1>
-    <a href="/ejecutar">Ejecutar Script</a>
+    <button onclick="ejecutarScript()">Ejecutar Script</button>
+    <pre id="resultado"></pre>
 </body>
 </html>
